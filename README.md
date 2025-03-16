@@ -148,3 +148,135 @@ Buka kembali nvim. jika berhasil maka icon akan muncul
 ![step-3](/assets/nerd-font-instalation/step-3.png)
 
 ditahap ini kalian sudah berhasil untuk mengubah font dan memunculkan icon di astro nvim
+
+## Percobaan Mensubmit Materi RPN
+Untuk environment kalian sudah siap. mari kita melakukan percobaan mensubmit materi RPN.
+
+### Menggunakan Akun Github kita di termux
+kalian bisa install dulu tool github dengan perintah berikut
+```bash
+pkg install gh
+```
+Jika sudah selesai kalian lakukan autentikasi untuk menyambungkan akun kalian dahulu dengan perintah
+```bash
+gh auth login
+```
+Kalian enter enter saja sampai muncul one time code. untuk one time code nya kalian copy terlebih dahulu, lalu tekan enter untuk membuka linknya di browser.
+
+![step-1](/assets/using-github/step-1.png)
+
+Jika sudah mengikuti prosedur di browsernya dan muncul halaman seperti dibawah maka kalian berhasil mengkoneksikan gh local kalian, dengan begini kalian bisa menggunakan operasi git yang berhubungan dengan remote nanti.
+
+![step-2](/assets/using-github/step-2.png)
+
+Sesudah itu kalian harus set config username dan email untuk config git kalian, agar nanti hasil commit menunujuk ke akun kalian. bisa gunakan perintah dibawah ini
+
+```bash
+git config --global user.name <UsernameGithubKalian>
+git config --global user.email <email@github.kalian>
+```
+
+### Fork Materi RPN
+kita akan mencoba menfork materi rpn disini kalian ikuti tutorial ini terlebih dahulu sampai kalian mencopy hasil link fork kalian.
+
+[![Tutor Daftar](https://img.youtube.com/vi/TCNAxlvnlfs/maxresdefault.jpg)](https://youtu.be/TCNAxlvnlfs)
+
+Setelah kalian mendapat link fork nya kalian clone ke termux kalian dengan cara
+```bash
+git clone <url repository fork kalian>
+```
+atau menggunkan github cli
+```bash
+gh repo clone <UsernameKalian>/<NamaRepository>
+```
+
+lalu kalian ubah directory ke directory hasil clone tadi contoh kalian bisa menggunakan perintah `ls` untuk melihat foldernya. setelah itu buka nvim.
+```bash
+cd <nama folder/directory>
+nvim
+```
+
+Buka terminal dengan `Spasi`+`t`+`h` lalu kalian buat new branch terlebih dahulu dengan perintah
+```bash
+git checkout branch -b <nama kalian>
+```
+setelah selesai tutup terminal dengan `Ctrl`+`d`. lalu kalian buka neo-tree dengan `Spasi`+`e`
+
+![step-1](/assets/rpn-fork/step-1.png)
+
+Pilih salah satu quiz yang ingin kalian kerjakan misal disini ingin mengerjakan quiz part1 soal1 maka kalian klik tombol `a` didalam neo-tree setelah itu masukan `soal1.js` setelah terbuat kalian enter, lalu tutup neo-tree kalian dengan tombol `Spasi`+`e` lagi.
+
+![step-2](/assets/rpn-fork/step-2.png)
+![step-3](/assets/rpn-fork/step-3.png)
+
+Mode di Neovim :
+
+- **Normal Mode** ditandai dengan indikator berwarna biru, kalian bisa memasuki mode ini menggunakan tombol `Esc`. Mode ini berguna untuk navigasi, dan memasukan vim command.
+
+![step-1](/assets/mode-in-neovim/step-1.png)
+
+- **Insert Mode** ditandai dengan indikator berwarna hijau. kalian bisa memasuki mode ini dengan mengetik `i` atau `a` di dalam Normal Mode. berguna jika kita ingin mengedit file yang sedang kita buka (buffer). Untuk keluar dari mode ini kalian bisa menggunakan tombol `Esc` untuk kembali ke Normal Mode.
+
+![step-2](/assets/mode-in-neovim/step-2.png)
+
+- **Visual Mode** ditandai dengan indikator berwarna ungu. Visual Mode sangat berguna ketika kita ingin menyeleksi lalu melakukan yank (copy), put (paste), dan delete. Kalian bisa memasuki mode ini dengan mengetik `v` atau `V` di dalam Normal Mode. Lalu untuk kembali ke Normal Mode kalian bisa menggunakan tombol `Esc`.
+
+![step-3](/assets/mode-in-neovim/step-3.png)
+
+Setelah kalian paham mode mode diatas cobalah untuk membuka file Readme.MD lalu masuk visual mode dan lakukan yank (copy) untuk soal1 saja, lalu masuk ke normal mode kembali lalu kembali ke soal1.js dan lakukan put (paste).
+
+Setelah itu kalian coba kerjakan soal tersebut menggunakan insert mode. setelah selesai bukalah terminal dan test code kalian mengunakan perintah
+```bash
+node <nama file>.js
+```
+
+![step-4](/assets/rpn-fork/step-4.png)
+![step-5](/assets/rpn-fork/step-5.png)
+![step-6](/assets/rpn-fork/step-6.png)
+
+Cobalah untuk membuat commit kalian. dengan perintah berikut
+```bash
+git add .
+git commit -m "feat: Pengerjaan Part 1 Soal 1"
+```
+![step-7](/assets/rpn-fork/step-7.png)
+
+Setelah itu cobalah mengetik `git push`. maka akan muncul peringatan, kalian ikuti saja perintah yang muncul dari peringatan tersebut untuk membuat branch di remote repository kalian sekaligus push hasil commit kalian. setelah selesai remote branch terbuat kalian hanya tingal mengetik `git push` saja
+
+![step-8](/assets/rpn-fork/step-8.png)
+
+Bukalah repository fork kalian di browser maka akan terlihat tombol untuk compare & pull request kalian klik saja itu.
+![step-9](/assets/rpn-fork/step-9.png)
+
+Pastikan untuk base repository berada pada repository asli. misalnya disini RPN-Phase-0/Week1-Welcome-To-Code dengan branch main. Dan ubah title dengan nama kalian
+![step-10](/assets/rpn-fork/step-10.png)
+
+Setelah itu klik create pull request
+![step-11](/assets/rpn-fork/step-11.png)
+
+Jika muncul pull request kalian di base repository. maka kalian berhasil mengerjakan soal dan mintalah helper untuk mereview hasil kerja kalian!.
+![step-12](/assets/rpn-fork/step-12.png)
+![step-13](/assets/rpn-fork/step-13.png)
+
+## Instal Typescript Pack (Optional)
+Typescript Pack berguna untuk code-completion, formatting, dan type lens pada proyek javascript kita. Ini sebenernya optional jadi kalian boleh skip saja untuk part ini
+
+Pertama-tama buka nvim kalian, dan klik `Space`+`f`+`a`. Maka akan muncul dialog Telescope seperti dibawah. Kalian cari `./lua/community.lua` lalu enter.
+
+![step-1](/assets/typescript-pack-instalation/step-1.png)
+
+Lalu kalian comment terlebih dahulu baris paling atas dan masukan
+```lua
+{ import = "astrocommunity.pack.typescript" }
+```
+didalam scope return nya.
+![step-2](/assets/typescript-pack-instalation/step-2.png)
+
+Save dengan `Spasi`+`w`. lalu keluar terlebih dahulu, masuk nvim, dan tunggu proses hingga selesai.
+
+![step-3](/assets/typescript-pack-instalation/step-3.png)
+![step-4](/assets/typescript-pack-instalation/step-4.png)
+
+Check didalam file javascript kalian. jika code completion atau warning muncul saat kalian mengetik sesuatu. selamat kalian berhasil menginstall typescript pack
+
+![step-5](/assets/typescript-pack-instalation/step-5.png)
