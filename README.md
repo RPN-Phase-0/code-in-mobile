@@ -280,3 +280,5 @@ Save dengan `Spasi`+`w`. lalu keluar terlebih dahulu, masuk nvim, dan tunggu pro
 Check didalam file javascript kalian. jika code completion atau warning muncul saat kalian mengetik sesuatu. selamat kalian berhasil menginstall typescript pack
 
 ![step-5](/assets/typescript-pack-instalation/step-5.png)
+
+> Written by **Adzikri**
